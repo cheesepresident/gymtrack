@@ -1,0 +1,151 @@
+
+h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 80;
+}
+
+p{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.loginbox{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  border: 3px solid rgb(167, 204, 205);
+  border-radius: 15px;
+  padding: 50px;
+  width: 200px;
+}
+
+.bluethemecolor{
+  background-color: rgb(229, 243, 244);
+}
+
+.poppins-font{
+  font-family: "Poppins", sans-serif;
+  }
+.bold{
+  font-weight: 700;
+}
+.card {
+    background: rgb(241, 247, 247);
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgb(167, 204, 205);
+    max-width: 500px;
+    margin: 3rem auto;
+  }
+
+.inputfield1{
+  width: 100%;
+  margin-bottom: 20px;
+  margin-top: 5px;
+  border-radius: 3px;
+  border:2px rgb(167, 204, 205);
+  border-style: solid;
+  padding: 8px;
+  outline: none;
+  box-shadow: none;
+  font-family:"Poppins", sans-serif;
+  font-size: 14px;
+}
+
+.borderbox{
+  box-sizing: border-box;
+}
+
+.label1{
+  display: block;
+  margin-bottom: 6px;
+}
+
+.button1{
+  background-color:rgb(207, 234, 236);
+  padding: 10px;
+  border-radius: 4px;
+  border-color: rgb(167, 204, 205);
+  box-shadow: none;
+  float: center;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 16px;
+}
+  
+.gymlogo{
+  font-family: 'Audiowide', sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  color:black;
+  padding: 10px;
+}
+
+.centereddiv{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+}
+  
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    background: rgb(167, 204, 205);
+    padding: 1rem;
+  }
+a {
+  color:#000000;
+  text-decoration: underline;
+}
+nav a{
+  color:#000000;
+  text-decoration: none;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+
+.toggle input:checked + label {
+  background:rgb(207, 234, 236);
+  border-color: rgb(167, 204, 205);
+}
+.toggle label {
+  padding: 9px;
+  border: 2px solid rgb(167, 204, 205);
+  border-radius: 6px;
+  cursor: pointer;
+  background: rgb(251, 251, 251);
+  transition: 0.2s;
+  font-family:"Poppins", sans-serif;
+  font-size: 14px;
+}
+
+text{
+  font-family:"Poppins", sans-serif;
+  font-size: 16px;
+}
+
+.exerc{
+  background: rgb(241, 247, 247);
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgb(167, 204, 205);
+  padding: 3px;
+  margin-top: 10px;
+}
+
+.notes{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  padding-left: 10px;
+  color: rgb(82, 125, 129);
+}
+.divpad{
+  padding: 8px;
+}

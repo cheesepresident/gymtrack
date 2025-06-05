@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+  <div class="gymlogo bluethemecolor" style="text-align: center;">GYMTRACK</div>
+
+  <nav class="poppins-font bold">
+    <a href="/log">Log Workout</a>
+    <a href="/history">Workout History</a>
+    <a href="/logout">Logout</a>
+  </nav>
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for msg in messages %}
+        <p>{{msg}}</p>
+      {% endfor %}
+    {% endif %}
+{% endwith %}
+
+  <div class="card">
+    <h1>Log a workout!</h1>
+    <form method="POST" action="/log" class="poppins-font">
+
+    <label for="exercise">Exercise*:</label>
+    <input type="text" class="inputfield1 poppins-font borderbox" name="exercise" placeholder="e.g., Push-ups" required><br>
+
+    <label for="amount">Amount:</label>
+
+    <div class="toggle borderbox">
+      <input type="number"class="inputfield1 poppins-font" style="width: 338px" name="amount" placeholder="e.g., 15" min="1">
+      <input type="radio" name="unit" value="reps" id="unit-reps" checked hidden>
+      <label for="unit-reps">Reps</label>
+
+      <input type="radio" name="unit" value="minutes" id="unit-minutes" hidden>
+      <label for="unit-minutes">Minutes</label>
+    </div>
+    <label for="weight">Weight (in kilogram):</label>
+    <input type="number"class="inputfield1 poppins-font borderbox" name="weight" placeholder="e.g., 35" min="0,01">
+
+    <label for="notes">Notes:</label>
+    <textarea class="inputfield1 poppins-font borderbox" name="notes" rows="3" placeholder="Any comments or variations?"></textarea>
+
+    <button type="submit" class="button1 poppins-font bold borderbox">Save Workout</button>
+  </form>
+  </div>
+{% endblock %}  

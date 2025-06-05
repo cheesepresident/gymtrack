@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+  <div class="gymlogo bluethemecolor" style="text-align: center;">GYMTRACK</div>
+
+  <nav class="poppins-font bold">
+    <a href="/log">Log Workout</a>
+    <a href="/history">Workout History</a>
+    <a href="/logout">Logout</a>
+  </nav>
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for msg in messages %}
+        <p>{{msg}}</p>
+      {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<ul id="workout-list"></ul>
+
+<script>
+fetch("/api/workouts")
+  .then(res => res.json())
+  .then(data => {
+    const list = document.getElementById("workout-list");
+
+    if (!data.length) {
+      list.innerHTML = "<h1>No workouts found.</h1>";
+      return;
+    }
+    previous_date = null;
+    exerccounter = 1;
+    data.forEach(w => {
+      const h1 = document.createElement("h1");
+      if(w.date != previous_date){
+        h1.textContent = `${w.date}`;
+        list.appendChild(h1);
+        previous_date = w.date;
+        exerccounter = 1
+      }
+      const exercisesdiv = document.createElement("div");
+      exercisesdiv.classList = 'divpad'
+      const exercises = document.createElement("text");
+      exercises.classList = 'exerc'
+      exercises.innerHTML = `<b> ${exerccounter}. ${w.exercise}</b> ${w.amount ? w.amount + " " + w.unit : ""} ${w.weight ?  + w.weight + "kg" : ""}</n>`;
+      exercisesdiv.appendChild(exercises);
+      list.appendChild(exercisesdiv);
+      if (w.notes) {
+        const notes = document.createElement("text");
+        notes.classList = 'notes';
+        notes.textContent = w.notes;
+        list.appendChild(notes)
+      }
+      
+      exerccounter++;
+    });
+  })
+  .catch(err => {
+    console.error("Error fetching workouts:", err);
+  });
+</script>
+{% endblock %}  

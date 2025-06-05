@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for msg in messages %}
+        <p>{{msg}}</p>
+      {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<div class="centereddiv">
+<div class="gymlogo" style="text-align: center; margin-bottom: 30px;">GYMTRACK</div>
+<div class="loginbox bluethemecolor">
+<h1>Login</h1>
+<form action="/login" method="post">
+  <label class="label1" for="uname"><b>Username</b></label>
+  <input class="inputfield1 borderbox" type="text" placeholder="Enter Username" name="uname" required>
+
+  <label class="label1" for="psw" ><b>Password</b></label>
+  <input class="inputfield1 borderbox" type="password" style="margin-bottom: 30px;" placeholder="Enter Password" name="psw">
+
+  <button class=button1 type="submit"><b>Login</b></button>
+  
+</form>
+<div style="display: flex; justify-content: center;">
+  <a href="/register" style="margin-top: 10px;">Register</a>
+</div>
+</div>
+
+</div>
+
+{% endblock %}  
